@@ -2993,7 +2993,6 @@ void CLOCKS_leftButton() {
   Clock_channel &selected = clock_channel[clocks_state.selected_channel];
 
   for (int i = 0; i < NUM_CHANNELS; ++i) {
-    if (selected.get_page() == TEMPO) {
       if (clock_channel[i].get_clock_source() == CHANNEL_TRIGGER_INTERNAL)
         clock_channel[i].set_clock_source(CHANNEL_TRIGGER_TR1);
       else
@@ -3010,7 +3009,6 @@ void CLOCKS_leftButton() {
       TU::OUTPUTS::setState(CLOCK_CHANNEL_5, OFF);
       TU::OUTPUTS::set(CLOCK_CHANNEL_6, OFF);
       TU::OUTPUTS::setState(CLOCK_CHANNEL_6, OFF);
-    }
     clock_channel[i].sync();
   }
 }
